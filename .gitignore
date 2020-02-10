@@ -16,6 +16,5 @@ out/
 *.iml
 *.bak
 public/
-*.yml
 images/
 
