@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xlm.send.CreateModel.mapper" >
+  <sql id="createModelBase">
+    (
+      UUID VARCHAR(32) PRIMARY KEY,
+      MESSAGE_ID VARCHAR(32) NOT NULL COMMENT "消息ID",
+      USER_ID VARCHAR(32) NOT NULL COMMENT "用户ID",
+      TITLE VARCHAR(60) NOT NULL COMMENT "消息标题",
+      CONTENT VARCHAR(255) NOT NULL COMMENT "消息内容",
+      IS_READ VARCHAR(20) NOT NULL COMMENT "是否已读  00未读  01已读",
+      CREATE_TIME DATE NOT NULL COMMENT "消息创建时间",
+      CREATE_ID VARCHAR(20) NOT NULL COMMENT "创建者ID"
+    )
+  </sql>
+  <insert id="createModelTable" parameterType="TableHeadVo">
+      CREATE TABLE T_MSG_MESSAGE_#{appId}_#{modelId}
+      <include refid="createModelBase"></include>
+  </insert>
+</mapper>
