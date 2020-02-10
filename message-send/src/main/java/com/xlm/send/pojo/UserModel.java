@@ -1,7 +1,16 @@
 package com.xlm.send.pojo;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import java.util.Date;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
 public class UserModel {
     private String uuid;
 
@@ -23,43 +32,4 @@ public class UserModel {
         this.uuid = uuid;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
-    }
-
-    public String getModelId() {
-        return modelId;
-    }
-
-    public void setModelId(String modelId) {
-        this.modelId = modelId == null ? null : modelId.trim();
-    }
-
-    public Integer getNotReading() {
-        return notReading;
-    }
-
-    public void setNotReading(Integer notReading) {
-        this.notReading = notReading;
-    }
-
-    public String getLastMessageTitle() {
-        return lastMessageTitle;
-    }
-
-    public void setLastMessageTitle(String lastMessageTitle) {
-        this.lastMessageTitle = lastMessageTitle == null ? null : lastMessageTitle.trim();
-    }
-
-    public Date getLastReadTime() {
-        return lastReadTime;
-    }
-
-    public void setLastReadTime(Date lastReadTime) {
-        this.lastReadTime = lastReadTime;
-    }
 }
