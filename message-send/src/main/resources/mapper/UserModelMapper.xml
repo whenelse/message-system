@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xlm.send.mapper.UserModelMapper" >
+  <resultMap id="BaseResultMap" type="com.xlm.send.pojo.UserModel" >
+    <result column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="MODEL_ID" property="modelId" jdbcType="VARCHAR" />
+    <result column="NOT_READING" property="notReading" jdbcType="INTEGER" />
+    <result column="LAST_MESSAGE_TITLE" property="lastMessageTitle" jdbcType="VARCHAR" />
+    <result column="LAST_READ_TIME" property="lastReadTime" jdbcType="DATE" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xlm.send.pojo.UserModel" >
+    insert into T_MSG_USER_MODEL (UUID, USER_ID, MODEL_ID,
+      NOT_READING, LAST_MESSAGE_TITLE, LAST_READ_TIME
+      )
+    values (#{uuid,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{modelId,jdbcType=VARCHAR},
+      #{notReading,jdbcType=INTEGER}, #{lastMessageTitle,jdbcType=VARCHAR}, #{lastReadTime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xlm.send.pojo.UserModel" >
+    insert into T_MSG_USER_MODEL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="notReading != null" >
+        NOT_READING,
+      </if>
+      <if test="lastMessageTitle != null" >
+        LAST_MESSAGE_TITLE,
+      </if>
+      <if test="lastReadTime != null" >
+        LAST_READ_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="notReading != null" >
+        #{notReading,jdbcType=INTEGER},
+      </if>
+      <if test="lastMessageTitle != null" >
+        #{lastMessageTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="lastReadTime != null" >
+        #{lastReadTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>
