@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xlm.send.mapper.SendWayMapper" >
+  <resultMap id="SendWayResultMap" type="com.xlm.send.pojo.SendWay" >
+    <result column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="APP_ID" property="appId" jdbcType="VARCHAR" />
+    <result column="MESSAGE_ID" property="messageId" jdbcType="VARCHAR" />
+    <result column="WECHAT_ID" property="wechatId" jdbcType="VARCHAR" />
+    <result column="EMAIL_ID" property="emailId" jdbcType="VARCHAR" />
+    <result column="NOTE_ID" property="noteId" jdbcType="VARCHAR" />
+    <result column="INS_TEMPLATE_ID" property="insTemplateId" jdbcType="VARCHAR" />
+    <result column="PUSH_ID" property="pushId" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xlm.send.pojo.SendWay" >
+    insert into T_MSG_MESSAGE_SEND_WAY (UUID, APP_ID, MESSAGE_ID, 
+      WECHAT_ID, EMAIL_ID, NOTE_ID, 
+      INS_TEMPLATE_ID, PUSH_ID)
+    values (#{uuid,jdbcType=VARCHAR}, #{appId,jdbcType=VARCHAR}, #{messageId,jdbcType=VARCHAR}, 
+      #{wechatId,jdbcType=VARCHAR}, #{emailId,jdbcType=VARCHAR}, #{noteId,jdbcType=VARCHAR}, 
+      #{insTemplateId,jdbcType=VARCHAR}, #{pushId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xlm.send.pojo.SendWay" >
+    insert into T_MSG_MESSAGE_SEND_WAY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="appId != null" >
+        APP_ID,
+      </if>
+      <if test="messageId != null" >
+        MESSAGE_ID,
+      </if>
+      <if test="wechatId != null" >
+        WECHAT_ID,
+      </if>
+      <if test="emailId != null" >
+        EMAIL_ID,
+      </if>
+      <if test="noteId != null" >
+        NOTE_ID,
+      </if>
+      <if test="insTemplateId != null" >
+        INS_TEMPLATE_ID,
+      </if>
+      <if test="pushId != null" >
+        PUSH_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="appId != null" >
+        #{appId,jdbcType=VARCHAR},
+      </if>
+      <if test="messageId != null" >
+        #{messageId,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatId != null" >
+        #{wechatId,jdbcType=VARCHAR},
+      </if>
+      <if test="emailId != null" >
+        #{emailId,jdbcType=VARCHAR},
+      </if>
+      <if test="noteId != null" >
+        #{noteId,jdbcType=VARCHAR},
+      </if>
+      <if test="insTemplateId != null" >
+        #{insTemplateId,jdbcType=VARCHAR},
+      </if>
+      <if test="pushId != null" >
+        #{pushId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

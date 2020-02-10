@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xlm.send.mapper.InstantMessageMapper" >
+  <resultMap id="InstantMessageResultMap" type="com.xlm.send.pojo.InstantMessage" >
+    <result column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="INS_TEMPLATE_ID" property="insTemplateId" jdbcType="VARCHAR" />
+    <result column="MODEL_ID" property="modelId" jdbcType="VARCHAR" />
+    <result column="TEMPLATE_NAME" property="templateName" jdbcType="VARCHAR" />
+    <result column="TEMPLATE_CONTENT`" property="templateContent`" jdbcType="VARCHAR" />
+    <result column="TEMPLATE_DESCRIPTION" property="templateDescription" jdbcType="VARCHAR" />
+    <result column="STATUS" property="status" jdbcType="VARCHAR" />
+    <result column="CREATED_BY" property="createdBy" jdbcType="VARCHAR" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="DATE" />
+    <result column="LAST_MODIFIED_BY" property="lastModifiedBy" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFIED_DATE" property="lastModifiedDate" jdbcType="DATE" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xlm.send.pojo.InstantMessage" >
+    insert into T_MSG_INSTANT_MESSAGE_TEMPLATE (UUID, INS_TEMPLATE_ID, MODEL_ID, 
+      TEMPLATE_NAME, TEMPLATE_CONTENT`, TEMPLATE_DESCRIPTION, 
+      STATUS, CREATED_BY, CREATE_DATE, 
+      LAST_MODIFIED_BY, LAST_MODIFIED_DATE)
+    values (#{uuid,jdbcType=VARCHAR}, #{insTemplateId,jdbcType=VARCHAR}, #{modelId,jdbcType=VARCHAR}, 
+      #{templateName,jdbcType=VARCHAR}, #{templateContent`,jdbcType=VARCHAR}, #{templateDescription,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, #{createDate,jdbcType=DATE}, 
+      #{lastModifiedBy,jdbcType=VARCHAR}, #{lastModifiedDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xlm.send.pojo.InstantMessage" >
+    insert into T_MSG_INSTANT_MESSAGE_TEMPLATE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        UUID,
+      </if>
+      <if test="insTemplateId != null" >
+        INS_TEMPLATE_ID,
+      </if>
+      <if test="modelId != null" >
+        MODEL_ID,
+      </if>
+      <if test="templateName != null" >
+        TEMPLATE_NAME,
+      </if>
+      <if test="templateContent` != null" >
+        TEMPLATE_CONTENT`,
+      </if>
+      <if test="templateDescription != null" >
+        TEMPLATE_DESCRIPTION,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="createdBy != null" >
+        CREATED_BY,
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE,
+      </if>
+      <if test="lastModifiedBy != null" >
+        LAST_MODIFIED_BY,
+      </if>
+      <if test="lastModifiedDate != null" >
+        LAST_MODIFIED_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uuid != null" >
+        #{uuid,jdbcType=VARCHAR},
+      </if>
+      <if test="insTemplateId != null" >
+        #{insTemplateId,jdbcType=VARCHAR},
+      </if>
+      <if test="modelId != null" >
+        #{modelId,jdbcType=VARCHAR},
+      </if>
+      <if test="templateName != null" >
+        #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="templateContent` != null" >
+        #{templateContent`,jdbcType=VARCHAR},
+      </if>
+      <if test="templateDescription != null" >
+        #{templateDescription,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null" >
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=DATE},
+      </if>
+      <if test="lastModifiedBy != null" >
+        #{lastModifiedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifiedDate != null" >
+        #{lastModifiedDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>
