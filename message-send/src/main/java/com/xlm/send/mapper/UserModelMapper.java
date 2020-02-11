@@ -3,9 +3,10 @@ package com.xlm.send.mapper;
 import com.xlm.send.pojo.UserModel;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public interface UserModelMapper {
-    int insert(UserModel record);
 
-    int insertSelective(UserModel record);
+    List<UserModel> selectModelNotRead(String userId);
 }

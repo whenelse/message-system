@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface AnnouncementMapper {
-    int insert(Announcement record);
 
-    int insertSelective(Announcement record);
+    Announcement selectLastReadTime(String userId);
 }
