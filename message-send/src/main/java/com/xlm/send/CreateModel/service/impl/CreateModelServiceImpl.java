@@ -1,7 +1,7 @@
 package com.xlm.send.CreateModel.service.impl;
 
 import com.xlm.send.CreateModel.mapper.CreateModelMapper;
-import com.xlm.send.CreateModel.service.CreateModel;
+import com.xlm.send.CreateModel.service.CreateModelService;
 import com.xlm.send.CreateModel.vo.ModelInfomationVo;
 import com.xlm.send.CreateModel.vo.TableHeadVo;
 import com.xlm.send.mapper.ModelMapper;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Date;
 import java.util.UUID;
 
-public class CreateModelImpl implements CreateModel {
+public class CreateModelServiceImpl implements CreateModelService {
 
     @Autowired
     ModelMapper modelMapper;

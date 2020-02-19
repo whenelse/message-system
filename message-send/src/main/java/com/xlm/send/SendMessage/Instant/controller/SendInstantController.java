@@ -1,6 +1,6 @@
 package com.xlm.send.SendMessage.Instant.controller;
 
-import com.xlm.send.SendMessage.Instant.service.SendInstant;
+import com.xlm.send.SendMessage.Instant.service.SendInstantService;
 import com.xlm.send.SendMessage.Instant.vo.MessageInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class SendInstantController {
 
     @Autowired
-    SendInstant sendInstant;
+    SendInstantService sendInstantService;
 
     public boolean sendInstant(MessageInfoVo messageInfoVo){
-        return sendInstant.sendInstant(messageInfoVo);
+        return sendInstantService.sendInstant(messageInfoVo);
     }
 }

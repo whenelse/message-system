@@ -4,6 +4,6 @@ import com.xlm.send.SendMessage.Instant.vo.MessageInfoVo;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface SendInstant {
+public interface SendInstantService {
     boolean sendInstant(MessageInfoVo messageInfoVo);
 }

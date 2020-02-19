@@ -1,7 +1,7 @@
 package com.xlm.send.SendMessage.Instant.service.impl;
 
 import com.xlm.send.SendMessage.Instant.mapper.SendInstantMapper;
-import com.xlm.send.SendMessage.Instant.service.SendInstant;
+import com.xlm.send.SendMessage.Instant.service.SendInstantService;
 import com.xlm.send.SendMessage.Instant.vo.MessageInfoVo;
 import com.xlm.send.pojo.MessageContent;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Date;
 import java.util.UUID;
 
-public class SendInstantImpl implements SendInstant {
+public class SendInstantServiceImpl implements SendInstantService {
 
     @Autowired
     SendInstantMapper sendInstantMapper;
