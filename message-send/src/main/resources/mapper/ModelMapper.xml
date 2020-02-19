@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xlm.send.mapper.ModelMapper" >
   <resultMap id="ModelResultMap" type="com.xlm.send.pojo.Model" >
-    <result column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="ID" property="id" jdbcType="INTEGER" />
     <result column="MODEL_NAME" property="modelName" jdbcType="VARCHAR" />
     <result column="APP_ID" property="appId" jdbcType="VARCHAR" />
     <result column="CREATE_TIME" property="createTime" jdbcType="DATE" />

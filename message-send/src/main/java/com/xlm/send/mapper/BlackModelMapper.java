@@ -1,9 +1,10 @@
 package com.xlm.send.mapper;
 
 import com.xlm.send.pojo.BlackModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public interface BlackModelMapper {
-    int insert(BlackModel record);
+    int addBlackModel(BlackModel record);
 
-    int insertSelective(BlackModel record);
 }

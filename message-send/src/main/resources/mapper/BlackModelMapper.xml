@@ -8,4 +8,9 @@
     <result column="STATUS" property="status" jdbcType="VARCHAR" />
   </resultMap>
 
+    <insert id="addBlackModel" >
+        insert into T_MSG_USER_BLACK_MODEL (UUID,USER_ID,MODEL_ID,STATUS) VALUES
+        (#{uuid},#{userId},#{modelId},#{status})
+    </insert>
+
 </mapper>

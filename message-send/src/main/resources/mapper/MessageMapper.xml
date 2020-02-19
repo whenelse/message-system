@@ -12,7 +12,20 @@
     <result column="CREATER_ID" property="createrId" jdbcType="VARCHAR" />
   </resultMap>
 
+    <sql id="MessageColumn">
+        UUID,MESSAGE_ID,USER_ID,TITLE,CONTENT,IS_READ,CREATE_TIME,CREATER_ID
+    </sql>
+
     <select id="selectNumByTime" resultType="Integer">
         select count(UUID) from T_MSG_MESSAGE where CREATE_TIME > #{date};
+    </select>
+
+    <select id="selectMessageByUserAndModel" resultMap="MessageResultMap">
+        SELECT
+            <include refid="MessageColumn"/>
+        FROM
+            T_MSG_MESSAGE#{11}#{modelId}
+        WHERE
+            USER_ID = #{userId}
     </select>
 </mapper>
