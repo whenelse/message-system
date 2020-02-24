@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class TableHeadVo {
 
-    private String appId;
+    private String appAbbreviation;
 
     private String modelId;
 

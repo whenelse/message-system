@@ -3,6 +3,7 @@
 <mapper namespace="com.xlm.send.mapper.AppMapper" >
   <resultMap id="AppResultMap" type="com.xlm.send.pojo.App" >
     <result column="UUID" property="uuid" jdbcType="VARCHAR" />
+    <result column="APP_ABBREVIATION" property="appAbbreviation" jdbcType="VARCHAR" />
     <result column="APP_VERSION_NEW" property="appVersionNew" jdbcType="VARCHAR" />
     <result column="APP_TYPE" property="appType" jdbcType="VARCHAR" />
     <result column="OS_TYPE" property="osType" jdbcType="VARCHAR" />
@@ -12,10 +13,10 @@
     <result column="STATUS" property="status" jdbcType="VARCHAR" />
   </resultMap>
   <insert id="insert" parameterType="com.xlm.send.pojo.App" >
-    insert into T_MSG_APP (UUID, APP_VERSION_NEW, APP_TYPE, 
+    insert into T_MSG_APP (UUID, APP_ABBREVIATION, APP_VERSION_NEW, APP_TYPE,
       OS_TYPE, AURORA_APPKEY, AURORA_MASTERSECRET, 
       AURORA_APNS_PRODUCTION, STATUS)
-    values (#{uuid,jdbcType=VARCHAR}, #{appVersionNew,jdbcType=VARCHAR}, #{appType,jdbcType=VARCHAR}, 
+    values (#{uuid,jdbcType=VARCHAR}, #{appAbbreviation,jdbcType=VARCHAR}, #{appVersionNew,jdbcType=VARCHAR}, #{appType,jdbcType=VARCHAR},
       #{osType,jdbcType=VARCHAR}, #{auroraAppkey,jdbcType=VARCHAR}, #{auroraMastersecret,jdbcType=VARCHAR}, 
       #{auroraApnsProduction,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
   </insert>

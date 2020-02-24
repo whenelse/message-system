@@ -15,7 +15,7 @@ import java.util.Date;
 @Accessors(chain = true)
 public class MessageContent {
 
-    private String appId;
+    private String appAbbreviation;
     private String modelId;
     private String uuid;
     private String messageId;

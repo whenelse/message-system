@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xlm.send.SendMessage.Instant.mapper.SendInstantMapper" >
   <insert id="sendInstant" parameterType="MessageContent">
-    INSERT INTO T_MSG_MESSAGE_#{appId}_#{modelId} (UUID, MESSAGE_ID, USER_ID, TITLE, CONTENT, IS_READ, CREATE_TIME,
+    INSERT INTO T_MSG_MESSAGE_#{appAbbreviation}_#{modelId} (UUID, MESSAGE_ID, USER_ID, TITLE, CONTENT, IS_READ, CREATE_TIME,
     CREATE_ID)
     VALUES (#{uuid},#{messageId},#{userId},#{title},#{content},#{isRead},#{createTime},#{createId})
   </insert>

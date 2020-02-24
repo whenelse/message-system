@@ -14,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Model {
-    private int id;
+    private int modelId;
 
     private String modelName;
 

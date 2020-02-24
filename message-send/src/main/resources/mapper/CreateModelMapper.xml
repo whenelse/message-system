@@ -14,7 +14,7 @@
     )
   </sql>
     <insert id="createModelTable" parameterType="TableHeadVo">
-        CREATE TABLE T_MSG_MESSAGE_#{appId}_#{modelId}
+        CREATE TABLE T_MSG_MESSAGE_#{appAbbreviation}_#{modelId}
         <include refid="createModelBase"></include>
     </insert>
 </mapper>

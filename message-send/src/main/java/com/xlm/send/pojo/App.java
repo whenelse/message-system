@@ -14,6 +14,8 @@ import lombok.experimental.Accessors;
 public class App {
     private String uuid;
 
+    private String appAbbreviation;
+
     private String appVersionNew;
 
     private String appType;
